@@ -1,0 +1,21 @@
+  
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Place Info:</h1>
+<ul>
+    <li>ID: @Model.Data.PlaceId</li>
+    <li>City: @Model.Data.City</li>
+    <li>Country: @Model.Data.Country</li>
+    <li>Landmark: @Model.Data.Landmark</li>
+    <li>Average Rating: @Model.Data.AverageRating</li>
+</ul>
+<br>
+
+@* <a href="/Places/Edit/@(Model.Data.PlaceId)"><p>Edit</p></a> *@
+<br>
+
+<a href="/Places"><p>Return</p></a>
+
+@* <a href="/Places/Delete/@(Model.PlaceId)"><p>DELETE</p></a> *@

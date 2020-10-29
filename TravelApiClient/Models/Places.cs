@@ -28,16 +28,18 @@ namespace TravelApiClient.Models
       System.Console.WriteLine(result);
       PagedResponse<List<Place>> jsonResponse = JsonConvert.DeserializeObject<PagedResponse<List<Place>>>(result);
       System.Console.WriteLine(jsonResponse);
-      return jsonResponse;
+      return jsonResponse; 
       //List<Place> placeList = JsonConvert.DeserializeObject<List<Place>>(jsonResponse.ToString());
       //return placeList;
     }
-    public static Place GetDetails(int id)
+    public static Response<Place> GetDetails(int id)
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
+      System.Console.WriteLine(result);
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      Place place = JsonConvert.DeserializeObject<Place>(jsonResponse.ToString());
+      System.Console.WriteLine(jsonResponse);
+      Response<Place> place = JsonConvert.DeserializeObject<Response<Place>>(jsonResponse.ToString());
       return place;
     }
      public static void Post(Place place)
@@ -52,7 +54,7 @@ namespace TravelApiClient.Models
     }
     public static void Delete(int id)
     {
-      var apiCallTask = ApiHelper.Delete(id);
+      var apiCallTask = ApiHelper.Delete(id); 
     }
   }
 

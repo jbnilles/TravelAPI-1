@@ -29,3 +29,6 @@ K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcore
 K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcoreapp2.2\TravelApiClient.dll
 K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcoreapp2.2\TravelApiClient.pdb
 K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcoreapp2.2\TravelApiClient.csproj.CopyComplete
+K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcoreapp2.2\Razor\Views\Places\Delete.g.cshtml.cs
+K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcoreapp2.2\Razor\Views\Places\Details.g.cshtml.cs
+K:\Epicodus-Projects\CSharp\TravelApi.Solution\TravelApiClient\obj\Debug\netcoreapp2.2\Razor\Views\Places\Edit.g.cshtml.cs
