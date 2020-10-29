@@ -25,9 +25,9 @@ namespace TravelApiClient.Models
     {
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
-      System.Console.WriteLine(result);
+      //System.Console.WriteLine(result);
       PagedResponse<List<Place>> jsonResponse = JsonConvert.DeserializeObject<PagedResponse<List<Place>>>(result);
-      System.Console.WriteLine(jsonResponse);
+      //System.Console.WriteLine(jsonResponse);
       return jsonResponse; 
       //List<Place> placeList = JsonConvert.DeserializeObject<List<Place>>(jsonResponse.ToString());
       //return placeList;
@@ -36,9 +36,9 @@ namespace TravelApiClient.Models
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
-      System.Console.WriteLine(result);
+      //System.Console.WriteLine(result);
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      System.Console.WriteLine(jsonResponse);
+      //System.Console.WriteLine(jsonResponse);
       Response<Place> place = JsonConvert.DeserializeObject<Response<Place>>(jsonResponse.ToString());
       return place;
     }
@@ -49,7 +49,11 @@ namespace TravelApiClient.Models
     }
     public static void Put(Place place)
     {
+     // System.Console.WriteLine("||||||||||");
+      //System.Console.WriteLine("||||||||||" + place.City.ToString());
+
       string jsonPlace = JsonConvert.SerializeObject(place);
+     //System.Console.WriteLine("||||||||||" + jsonPlace);
       var apiCallTask = ApiHelper.Put(place.PlaceId, jsonPlace);
     }
     public static void Delete(int id)

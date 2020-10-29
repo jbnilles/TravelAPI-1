@@ -1,0 +1,14 @@
+@model TravelApiClient.Models.Place
+<h1>Edit Info:</h1>
+<form action="/Places/edit/" method="post">
+  @Html.HiddenFor(x => x.PlaceId)
+  <label for="City">Place's City Name</label>
+  <input id="City" name="City" type="text" value="@(Model.City)">
+  <label for="Country">Country Name</label>
+  <input id="Country" name="Country" type="text" value="@(Model.Country)">
+  <label for="Landmark">Landmark</label>
+  <input id="Landmark" name="Landmark" type="text" value="@(Model.Landmark)">
+  <button type="submit">Go!</button>
+</form>
+
+

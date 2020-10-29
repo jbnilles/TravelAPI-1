@@ -10,7 +10,7 @@ namespace TravelApiClient.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index() 
         {
             return View();
         }

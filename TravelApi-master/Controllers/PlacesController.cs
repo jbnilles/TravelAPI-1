@@ -132,16 +132,18 @@ namespace TravelApi.Controllers
     public void Put(int id, [FromBody] Place place)
     {
       place.PlaceId = id;
-      if (place.Reviews.Count() != 0)
-      {
-        double averageRating = place.Reviews.Average(y => y.Rating);
-        place.AverageRating = averageRating;
-      }
-      else
-      {
-        place.AverageRating = 0;
-      }
-
+        if (_db.Reviews.Where(x => x.PlaceId == place.PlaceId).Count() != 0)
+        {
+          double averageRating = ( _db.Reviews.Where(x => x.PlaceId == place.PlaceId).Sum(y => y.Rating));
+          averageRating = (averageRating / _db.Reviews.Where(x => x.PlaceId == place.PlaceId).Count());
+          place.AverageRating =  averageRating;
+          
+          //System.Console.WriteLine(averageRating);
+        }
+        else
+        {
+          place.AverageRating = 0;
+        }
       _db.Entry(place).State = EntityState.Modified;
       _db.SaveChanges();
     }

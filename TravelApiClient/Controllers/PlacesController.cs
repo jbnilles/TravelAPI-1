@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using TravelApiClient.Models;
 
 namespace TravelApiClient.Controllers
@@ -27,5 +28,18 @@ namespace TravelApiClient.Controllers
       var place = Place.GetDetails(id);
       return View(place);
     }
-  }
+    
+    public IActionResult Edit (int id)
+    {
+      var place = Place.GetDetails(id);
+      return View(place.Data);
+    }
+    [HttpPost]
+    public IActionResult Edit (Place place)
+    {
+      Place.Put(place);  
+      return RedirectToAction("Index");
+    }
+
+  } 
 }

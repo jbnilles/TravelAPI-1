@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace TravelApi.Controllers
 {
-  [Authorize]
+  //[Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class ReviewsController : ControllerBase
@@ -46,8 +46,8 @@ namespace TravelApi.Controllers
       if (place.Reviews.Count() != 0)
       {
         double averageRating = place.Reviews.Sum(y => y.Rating);
-        averageRating = averageRating / place.Reviews.Count();
-        place.AverageRating = averageRating;
+        averageRating = (averageRating / place.Reviews.Count());
+        place.AverageRating =  averageRating;
       }
       else
       {
@@ -64,7 +64,7 @@ namespace TravelApi.Controllers
       Place place = _db.Places.Where(x => x.PlaceId == review.PlaceId).Include(x => x.Reviews).FirstOrDefault();
       if (place.Reviews.Count() != 0)
       {
-        double averageRating = place.Reviews.Average(y => y.Rating);
+        double averageRating = (place.Reviews.Average(y => y.Rating));
         place.AverageRating = averageRating;
       }
       else

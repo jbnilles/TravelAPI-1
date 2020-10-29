@@ -25,7 +25,10 @@ namespace TravelApiClient.Models
       RestRequest request = new RestRequest($"places", Method.POST);
       request.AddHeader("Content-Type", "application/json"); // add token
       request.AddJsonBody(newPlace);
+      //System.Console.WriteLine("|||||||" + request.ToString());
       var response = await client.ExecuteTaskAsync(request);
+      //System.Console.WriteLine("|||||||" + response.Content.ToString());
+      //return response.Content;
     }
     public static async Task Put(int id, string newPlace)
     {
@@ -33,7 +36,9 @@ namespace TravelApiClient.Models
       RestRequest request = new RestRequest($"places/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json"); // add token
       request.AddJsonBody(newPlace);
+      System.Console.WriteLine("|||||||" + newPlace);
       var response = await client.ExecuteTaskAsync(request);
+      System.Console.WriteLine("|||||||" + response.Content.ToString());
     }
     public static async Task Delete(int id)
     {

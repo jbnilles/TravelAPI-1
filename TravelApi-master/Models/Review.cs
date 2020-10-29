@@ -5,12 +5,12 @@ namespace TravelApi.Models
   public class Review
   {
     public int ReviewId { get; set; }
-    [Required]
+    // [Required]
     public string TravReview { get; set; }
-    [Required]
+    // [Required]
     public DateTime Date { get; set; }
-    [Required]
-    [Range(1, 10, ErrorMessage = "rating must be between 1 and 10.")]
+    // [Required]
+    // [Range(1, 10, ErrorMessage = "rating must be between 1 and 10.")]
     public int Rating { get; set; }
     public int PlaceId { get; set; }
 
